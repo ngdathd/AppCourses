@@ -72,7 +72,12 @@ public class ShowNotifyReceiver extends BroadcastReceiver
             int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY); // Get hour in 24 hour format
             Log.i(TAG, "onReceive: " + hour);
             if (hour == 6 || hour == 10 || hour == 16 || hour == 20) {
-                itemCourse = itemCourses.get(new Random().nextInt(itemCourses.size()));
+                if (null != itemCourses) {
+                    Log.i(TAG, "doInBackground: ");
+                    itemCourse = itemCourses.get(new Random().nextInt(itemCourses.size()));
+                } else {
+                    Log.i(TAG, "doInBackground: null");
+                }
             }
 
             InputStream in;
@@ -82,9 +87,11 @@ public class ShowNotifyReceiver extends BroadcastReceiver
                 connection.setDoInput(true);
                 connection.connect();
                 in = connection.getInputStream();
+                Log.i(TAG, "doInBackground: bitmap");
                 return BitmapFactory.decodeStream(in);
             } catch (NullPointerException | IOException e) {
                 e.printStackTrace();
+                Log.i(TAG, "doInBackground: no bitmap");
             }
             return null;
         }
