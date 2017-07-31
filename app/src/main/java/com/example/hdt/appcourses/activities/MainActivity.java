@@ -124,12 +124,12 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ln_all: {
-                if (Util.isConnected(MainActivity.this)) {
-                    Intent intent = new Intent(this, RcDetailActivity.class);
-                    startActivity(intent);
-                } else {
-                    Snackbar.make(findViewById(android.R.id.content), "Bạn đang offline", Snackbar.LENGTH_LONG).show();
-                }
+//                if (Util.isConnected(MainActivity.this)) {
+//                    Intent intent = new Intent(this, RcDetailActivity.class);
+//                    startActivity(intent);
+//                } else {
+//                    Snackbar.make(findViewById(android.R.id.content), "Bạn đang offline", Snackbar.LENGTH_LONG).show();
+//                }
             }
             break;
             case R.id.iv_digital_marketing: {
