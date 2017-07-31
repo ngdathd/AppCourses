@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ListItemCourses {
 
-    @SerializedName("ListItem")
+    @SerializedName("ListAds")
     private List<ItemCourse> itemCourses;
 
     public List<ItemCourse> getItemCourses() {

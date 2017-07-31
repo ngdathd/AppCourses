@@ -42,9 +42,6 @@ public class WebActivity extends AppCompatActivity
 
     private void initComponents() {
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.getSettings().setSupportZoom(true);
-        mWebView.getSettings().setBuiltInZoomControls(true);
-        mWebView.getSettings().setDisplayZoomControls(true);
 
         Intent receiver = getIntent();
         mWebView.loadUrl(receiver.getStringExtra(KEY_URL));
